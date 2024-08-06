@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+       <h1 id="musicHeading">Music Player System</h1>
+    </div>
+    <div class="row" id="mainContainer">
+       <img id="songIMG" [src]="song[currentIndex].image">
+       <p id="songTitle">{{song[currentIndex].name}}</p>
+       <!--<p id="artistName">{{song[currentIndex].artist}}</p>-->
+       <button id="prev" (click)="prevSong()"><i class="fa-solid fa-backward"></i></button>
+       <button id="play_stop" (click)="togglePlayPause()">
+       <i class="fa-solid" [ngClass]="{'fa-play': !isPlaying, 'fa-pause': isPlaying}"></i>
+        </button>
+       <button id="next" (click)="nextSong()"><i class="fa-solid fa-forward"></i></button>
+       <input type="range" min="0" max="100" (input)="changeVolume($event)">
+    </div>
+  </div>
